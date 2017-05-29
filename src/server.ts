@@ -1,3 +1,6 @@
+declare var require: any
+declare var module: any
+declare var exports: any
 let express = require('express');
 let fs = require('fs');
 let request = require('request');

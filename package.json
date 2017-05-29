@@ -1,12 +1,19 @@
 {
-  "name"         : "tatoeba-web-scrape",
-  "version"      : "0.0.1",
-  "description"  : "Scrape the Tatoeba site, in order to provide a JS api.",
-  "main"         : "server.js",
-  "author"       : "Nate Lapinski",
-  "dependencies" : {
-    "express"    : "latest",
-    "request"    : "latest",
-    "cheerio"    : "latest"
+  "name": "tatoeba-web-scrape",
+  "version": "0.0.1",
+  "description": "Scrape the Tatoeba site, in order to provide a JS api.",
+  "main": "lib/server.js",
+  "author": "Nate Lapinski",
+  "scripts": {
+    "start": "node lib/server.js"
+  },
+  "dependencies": {
+    "express": "latest",
+    "request": "latest",
+    "cheerio": "latest"
+  },
+  "devDependencies": {
+    "@types/node": "^7.0.22",
+    "typescript": "^2.3.3"
   }
 }

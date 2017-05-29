@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+        "module": "system",
+        "noImplicitAny": false,
+        "removeComments": true,
+        "preserveConstEnums": true,
+        "outFile": "lib/server.js",
+        "sourceMap": true
+    },
+    "include": [
+        "lib/**"
+    ],
+    "exclude": [
+        "node_modules",
+        "**/*.spec.ts"
+    ]
+}
