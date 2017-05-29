@@ -4,11 +4,11 @@
         "noImplicitAny": false,
         "removeComments": true,
         "preserveConstEnums": true,
-        "outFile": "lib/server.js",
-        "sourceMap": true
+        "outFile": "build/server.js",
+        "sourceMap": false
     },
     "include": [
-        "lib/**"
+        "app/**"
     ],
     "exclude": [
         "node_modules",

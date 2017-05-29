@@ -2,10 +2,10 @@
   "name": "tatoeba-web-scrape",
   "version": "0.0.1",
   "description": "Scrape the Tatoeba site, in order to provide a JS api.",
-  "main": "lib/server.js",
+  "main": "build/server.js",
   "author": "Nate Lapinski",
   "scripts": {
-    "start": "node lib/server.js"
+    "start": "node build/server.js"
   },
   "dependencies": {
     "express": "latest",
