@@ -1,0 +1,12 @@
+{
+  "name"         : "tatoeba-web-scrape",
+  "version"      : "0.0.1",
+  "description"  : "Scrape the Tatoeba site, in order to provide a JS api.",
+  "main"         : "server.js",
+  "author"       : "Nate Lapinski",
+  "dependencies" : {
+    "express"    : "latest",
+    "request"    : "latest",
+    "cheerio"    : "latest"
+  }
+}
