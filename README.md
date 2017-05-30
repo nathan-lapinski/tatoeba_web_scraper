@@ -3,6 +3,8 @@ JS web scraper for the Tatoeba project
 
 run npm install
 
+tsc
+
 npm start
 
 naviagte to localhost:8081/scrape/<kanji>
