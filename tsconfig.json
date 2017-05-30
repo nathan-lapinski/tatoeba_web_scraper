@@ -1,14 +1,14 @@
 {
     "compilerOptions": {
-        "module": "system",
+        "module": "commonjs",
         "noImplicitAny": false,
         "removeComments": true,
         "preserveConstEnums": true,
-        "outFile": "build/server.js",
+        "outDir": "build",
         "sourceMap": false
     },
     "include": [
-        "app/**"
+        "app/**/*.ts"
     ],
     "exclude": [
         "node_modules",
