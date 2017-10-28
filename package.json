@@ -8,9 +8,10 @@
     "start": "node build/server.js"
   },
   "dependencies": {
+    "cheerio": "latest",
     "express": "latest",
     "request": "latest",
-    "cheerio": "latest"
+    "tsc": "^1.20150623.0"
   },
   "devDependencies": {
     "@types/node": "^7.0.22",
