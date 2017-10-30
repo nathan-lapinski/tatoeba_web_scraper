@@ -1,33 +1,22 @@
 var express = require('express');
-var fs = require('fs');
-var request = require('request');
-var cheerio = require('cheerio');
+var monk = require('monk');
+var controllers_1 = require('./controllers');
+var controllers_2 = require('./controllers');
 var app = express();
-app.get('/scrape/:kanji', function (req, res) {
-    var kanji = req.params.kanji;
-    var url = 'https://tatoeba.org/eng/sentences/search?from=jpn&to=eng&query=' + encodeURIComponent(kanji);
-    request(url, function (error, response, html) {
-        if (!error) {
-            var $ = cheerio.load(html);
-            var retval = [];
-            var sentences = $('.sentence-and-translations').toArray();
-            sentences.forEach(function (current, index, array) {
-                var obj = {};
-                var eng = $(current).find('.translation .text').toArray();
-                obj.english = [];
-                obj.japanese = $(current).find('.sentence .text').text().trim();
-                eng.forEach(function (c, i, a) {
-                    obj.english.push($(c).text().trim());
-                });
-                retval.push(obj);
-            });
-            res.json(retval);
-        }
-        else {
-            console.log('ERROR: ', error);
-        }
-    });
+var port = process.env.PORT || 9999;
+var db = monk('localhost:27017/oboeru_v1');
+app.use(function (req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
 });
-app.listen('8081');
-console.log('Magic happens on port 8081');
+app.use(function (req, res, next) {
+    req.db = db;
+    next();
+});
+app.use('/scrape', controllers_1.RequestController);
+app.use('/data', controllers_2.DatabaseController);
+app.listen(port, function () {
+    console.log("Starting Tatoeba scraper on " + port);
+});
 exports = module.exports = app;
